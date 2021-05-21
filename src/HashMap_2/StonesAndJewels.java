@@ -37,6 +37,7 @@ public class StonesAndJewels {
 		char[] arr1 = stones.toCharArray();
 		char[] arr2 = jewels.toCharArray();
 		
+		// We could also use getOrDefault() method below
 		for(char ch : arr1) {
 			// if character already present, then increase its frequency by 1
 			if(mp.containsKey(ch))

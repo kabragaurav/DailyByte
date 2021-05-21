@@ -28,6 +28,7 @@ public class FirstUniqueCharacter {
 		Map<Character, Integer> mp = new HashMap<>();
 		char[] arr = s.toCharArray();
 		
+		// We could also use getOrDefault() method below
 		for(char ch : arr) {
 			// if character already present, then increase its frequency by 1
 			if(mp.containsKey(ch))

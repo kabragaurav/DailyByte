@@ -38,6 +38,7 @@ public class ValidAnagram {
 		char[] arr1 = original.toCharArray();
 		char[] arr2 = other.toCharArray();
 		
+		// We could also use getOrDefault() method below
 		for(char ch : arr1) {
 			// if character already present, then increase its frequency by 1
 			if(mp.containsKey(ch))
@@ -72,8 +73,8 @@ public class ValidAnagram {
 	 * @param second string, other
 	 * @return boolean, if strings are anagram
 	 * 
-	 * Time: O(NlogN) since we iterate string linearly
-	 * Space: O(N) for character arrays
+	 * Time: O(NlogN), NlogN for sorting and N for comparing strings for equality
+	 * Space: O(N) for character arrays, O(1) for heapsort (if sort method uses heap sort)
 	 */
 	private boolean isAnagramUsingSorting(String original, String other) {
 		/**
@@ -95,6 +96,7 @@ public class ValidAnagram {
 		String s1 = new String(arr1);
 		String s2 = new String(arr2);
 		
+		// or we could directly do Arrays.equals(arr1, arr2);
 		return s1.equals(s2);
 	}
 
