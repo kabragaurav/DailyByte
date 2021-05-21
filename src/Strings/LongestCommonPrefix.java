@@ -7,6 +7,11 @@ package Strings;
 
 import java.util.Arrays;
 
+/**
+ * @author gaurav kabra
+ * @since May 21, 2021
+ */
+
 public class LongestCommonPrefix {
 	
 	
