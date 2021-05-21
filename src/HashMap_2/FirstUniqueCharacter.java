@@ -21,6 +21,9 @@ public class FirstUniqueCharacter {
 		 * Then we return the first character in string that has frequency = 1
 		 */
 		
+		if(s == null)
+			return -1;
+		
 		// map for storing frequency corresponding to each character
 		Map<Character, Integer> mp = new HashMap<>();
 		char[] arr = s.toCharArray();

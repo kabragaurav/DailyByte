@@ -25,6 +25,9 @@ public class ValidAnagram {
 	 */
 	private boolean isAnagramUsingMap(String original, String other) {
 		
+		if(original == null || other == null)
+			return false;
+		
 		// if length is not same then strings cannot be anagram
 		if(original.length() != other.length())
 			return false;
@@ -77,6 +80,9 @@ public class ValidAnagram {
 		 * Logic:
 		 * We sort the two strings, and they are anagram is they are equal after sorting
 		 */
+		if(original == null || other == null)
+			return false;
+		
 		// if length is not same then strings cannot be anagram
 		if(original.length() != other.length())
 			return false;
