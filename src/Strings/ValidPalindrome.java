@@ -67,9 +67,12 @@ public class ValidPalindrome {
 		return true;
 	}
 	
+	// driver - main method
 	public static void main(String[] args) {
 		
 		ValidPalindrome vp = new ValidPalindrome();
+		
+		// TESTCASES
 		String s = "level";
 		System.out.println(vp.isValidPalindrome(s, 0, s.length()-1));
 		s = "algorithm";

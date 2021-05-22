@@ -56,12 +56,12 @@ public class PalindromeAfterRemoval {
 	public static void main(String[] args) {
 		
 		PalindromeAfterRemoval par = new PalindromeAfterRemoval();
+		
+		// TESTCASES
 		String s = "abcba";
 		System.out.println(par.canPalindrome(s, -1, s.length()));
-		
 		s = "foobof";
 		System.out.println(par.canPalindrome(s, -1, s.length()));
-		
 		s = "abccab";
 		System.out.println(par.canPalindrome(s, -1, s.length()));
 		
