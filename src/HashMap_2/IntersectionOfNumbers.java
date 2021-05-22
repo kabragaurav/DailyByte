@@ -10,7 +10,7 @@ import java.util.Set;
 
 /**
  * @author gaurav kabra
- * @since May 21, 2021
+ * @since May 22, 2021
  */
 public class IntersectionOfNumbers {
 	
@@ -80,6 +80,8 @@ public class IntersectionOfNumbers {
 		return ret;
 	}
 	
+	// Helper method for main method
+	// prints array contents
 	private void displayAns(int[] ans) {
 		for(int x : ans)
 			System.out.print(x+" ");
@@ -90,6 +92,7 @@ public class IntersectionOfNumbers {
 	public static void main(String[] args) {
 		IntersectionOfNumbers ion = new IntersectionOfNumbers();
 		int[] ans;
+		
 		// TESTCASES
 		ans = ion.getIntersection(new int[]{2, 4, 4, 2}, new int[]{2, 4});
 		ion.displayAns(ans);
@@ -97,7 +100,6 @@ public class IntersectionOfNumbers {
 		ion.displayAns(ans);
 		ans = ion.getIntersection(new int[]{2, 4, 6, 8}, new int[]{1, 3, 5, 7});
 		ion.displayAns(ans);
-		
 		
 		ans = ion.getIntersectionBuiltInMethod(new int[]{2, 4, 4, 2}, new int[]{2, 4});
 		ion.displayAns(ans);
