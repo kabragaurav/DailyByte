@@ -16,13 +16,24 @@ import java.util.Deque;
  */
 public class CallCounter {
 	
+	// Maintain a doubly-ended queue(deque) to store incoming call timing (in msec)
 	Deque<Integer> record;
 	
+	// Zero-parameter constructor to initialize the record object
 	public CallCounter() {
 		this.record = new ArrayDeque<Integer>();
 	}
 	
 	private int ping(int t) {
+		/**
+		 * Logic:
+		 * When a call is made and record deque is empty, that means no call made within 3000 msec (i.e. 3 sec) other than new call.
+		 * So just add this call timing to record and return 1.
+		 * Else if deque is not empty, then while the front element of record is older than new call by 3000 msec, keep removing front element.
+		 * When removal is finished, add new call timing to record and return record size.
+		 * Time Complexity : O(N) since we add and remove each element at most once.
+		 * Space Complexity : O(N) since we use deque as auxiliary storage.
+		 */
 		if(record.isEmpty()) {
 			record.addLast(t);
 			return 1;
@@ -35,10 +46,12 @@ public class CallCounter {
 			return record.size();
 		}
 	}
-
+	
+	// driver - main method
 	public static void main(String[] args) {
 		CallCounter cc = new CallCounter();
 		
+		// TESTCASES
 		System.out.println(cc.ping(1));
 		System.out.println(cc.ping(300));
 		System.out.println(cc.ping(3000));
