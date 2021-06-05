@@ -31,8 +31,8 @@ public class CallCounter {
 		 * So just add this call timing to record and return 1.
 		 * Else if deque is not empty, then while the front element of record is older than new call by 3000 msec, keep removing front element.
 		 * When removal is finished, add new call timing to record and return record size.
-		 * Time Complexity : O(N) since we add and remove each element at most once.
-		 * Space Complexity : O(N) since we use deque as auxiliary storage.
+		 * Time Complexity : O(1) since t can range from 0 to 3000 only. So in the worst case we need only 3000 iterations to pop out all outdated elements
+		 * Space Complexity : O(1) since t can range from 0 to 3000 only. So record of size 3000 is sufficient in worst case.
 		 */
 		if(record.isEmpty()) {
 			record.addLast(t);
