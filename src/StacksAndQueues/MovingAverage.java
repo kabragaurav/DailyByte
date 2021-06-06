@@ -45,7 +45,7 @@ public class MovingAverage {
 	// driver - main method
 	public static void main(String[] args) {
 		MovingAverage ma = new MovingAverage(3);
-		// i.e. the moving average has a capacity of 3.
+		
 		// TESTCASES
 		System.out.println(ma.movingAverage(3));
 		System.out.println(ma.movingAverage(5));
