@@ -14,13 +14,13 @@ import java.util.Deque;
  * @author gaurav kabra
  * @since June 5, 2021
  */
-public class MovingAverage <T extends Number> {
+public class MovingAverage {
 	/**
 	 * Time Complexity : O(N) since movingAverage method has O(1) time complexity and is repeated for each of N numbers
 	 * Space Complexity : O(C) where C is capacity provided in one argument constructor
 	 */
 	
-	private Deque<T> deque;			// will be used to hold numbers
+	private Deque<Double> deque;			// will be used to hold numbers
 	private double sum; 			// sum that will be used to calculate average
 	private int capacity;			// max number of numbers in deque at any time
 	
@@ -29,7 +29,7 @@ public class MovingAverage <T extends Number> {
 		this.deque = new ArrayDeque<>(capacity);
 	}
 	
-	private double movingAverage(T number) {
+	private double movingAverage(double number) {
 		// if deque is full, remove first element (oldest one) before assing new number to last place
 		if(deque.size() == this.capacity) {
 			// since removing element, subtract its value from sum
@@ -37,14 +37,14 @@ public class MovingAverage <T extends Number> {
 		}
 		deque.addLast(number);
 		// add value of newly added number to sum
-		sum += (Double) number;
+		sum += number;
 		// Formula: avg = sum/size
 		return sum/deque.size();
 	}
 	
 	// driver - main method
 	public static void main(String[] args) {
-		MovingAverage<Integer> ma = new MovingAverage<>(3);
+		MovingAverage ma = new MovingAverage(3);
 		// i.e. the moving average has a capacity of 3.
 		// TESTCASES
 		System.out.println(ma.movingAverage(3));
