@@ -15,7 +15,7 @@ public class ReverseList {
 	private LinkedList<Integer> reverseList(LinkedList<Integer> ls) {
 		/**
 		 * descendingIterator method of LinkedList class return an iterator over the elements in this LinkedList in reverse sequential order(i.e. tail to head)
-		 * More here: https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html#descendingIterator--
+		 * A good read : https://tinyurl.com/oracle-doc-descendingIter
 		 * Time Complexity : For descendingIterator(), it is O(N) since LinkedList is to be traversed linearly
 		 * Space Complexity : O(N) since we create new LinkedList having same values in original list but in reverse order.
 		 */

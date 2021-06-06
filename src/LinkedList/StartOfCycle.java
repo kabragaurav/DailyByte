@@ -8,7 +8,7 @@ package LinkedList;
 
 /**
  * Not using java.util.* as it is generally a bad idea to use wildcard character
- * For more, see: https://tharakamd-12.medium.com/is-it-bad-to-use-wildcard-imports-in-java-1b46a863b2be
+ * For more, see: https://tinyurl.com/wildimport
  */
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,6 +22,7 @@ import java.util.Set;
  * @author gaurav kabra
  * @since June 2, 2021
  */
+// A good read : https://tinyurl.com/floyd-cycle-detection-explain
 public class StartOfCycle {
 	
 	private Integer getStartOfCycleUsingSet(LinkedList<Integer> ls) {
