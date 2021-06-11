@@ -16,31 +16,38 @@ import Trees.TreeUtils.TreeNode;
 
 public class BSTToArray {
 	
-	private List<Integer> ls;
-	
-	public BSTToArray() {
-		ls = new ArrayList<>();
-	}
-	
-	private void inOrderTraversal(TreeNode<Integer> root) {
+	private void inOrderTraversal(List<Integer> ls, TreeNode<Integer> root) {
+		/**
+		 * Logic:
+		 * Inorder traversal (left -> root -> right) of tree gives us sorted (ascending) list.
+		 * 
+		 * Time Complexity: O(N), where N is the number of nodes in the BST (We have to visit each node).
+         * Space Complexity: O(N) since we maintain a list to store all nodes of tree. Also the maximum amount of space utilized by the recursion stack would be N since the height of a skewed BST could be N.
+         */
+     
 		if(root == null)
 			return;
 		if((root.left == null ) && (root.right == null)) {
 			ls.add(root.val);
 		} 
 		else {
-			inOrderTraversal(root.left);
+			inOrderTraversal(ls, root.left);
 			ls.add(root.val);
-			inOrderTraversal(root.right);
+			inOrderTraversal(ls, root.right);
 		}
 	}
 	
+	// helper method to main
 	private static TreeNode<Integer> getTreeNode(Integer val) {
 	    TreeNode<Integer> treeNode = new TreeNode<Integer>(val);
 		return treeNode;
 	}
-
+	
+	// driver - main method
 	public static void main(String[] args) {
+		// create empty list to hold sorted numbers from tree traversal
+		List<Integer> ls = new ArrayList<>();
+		
 		// make Tree
 	    TreeNode<Integer> root = getTreeNode(6);
 		TreeNode<Integer> two = getTreeNode(2);
@@ -62,9 +69,9 @@ public class BSTToArray {
 		four.right = five;	
 		
 		BSTToArray bta = new BSTToArray();
-		bta.inOrderTraversal(root);
+		bta.inOrderTraversal(ls, root);
 		
-		for(Integer i : bta.ls) {
+		for(Integer i : ls) {
 			System.out.println(i);
 		}
 	}

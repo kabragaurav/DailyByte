@@ -21,6 +21,15 @@ public class ArrayToBST {
 	}
 	
 	private TreeNode getArrayToBST(int[] ls, int start, int end) {
+		/*
+		 * Logic:
+		 * Array, ls, is already sorted. So we can pick any number from array and make it root.
+		 * Then left part of array (lesser values) become left tree and right part of array (greater values) become right tree.
+		 * So though many trees can be formed, but for height-balanced tree, make mid of array as root and then proceed.
+		 * 
+		 * Time Complexity: O(N), where N is the number of elements in the array.
+         * Space Complexity: O(N. The maximum amount of space utilized by the recursion stack would be N since the height of a skewed BST could be N.
+         */
 		
 		if(start == end) {
 			return getTreeNode(ls[start]);
@@ -31,7 +40,7 @@ public class ArrayToBST {
 		
 
 		int mid = start + (end-start)/2;
-		TreeNode root;
+		TreeNode<Integer> root;
 		root = getTreeNode(ls[mid]);
 		root.left = getArrayToBST(ls, start, mid-1);
 		root.right = getArrayToBST(ls, mid+1, end);

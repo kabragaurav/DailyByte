@@ -15,6 +15,12 @@ public class LowestCommonAncestor {
 	private TreeNode<Integer> lowestCommonAncestorIterative(TreeNode<Integer> root, TreeNode<Integer> p, TreeNode<Integer> q) {
         
 		/**
+		 * Logic:
+		 * If root is null, tree is empty and hence return null reference (by breaking out of while loop).
+		 * Else if values at both p and q are less than value at root, that means p and q are be on left of root. So search in left.
+		 * Else if values at both p and q are greater than value at root, that means p and q are be on right of root. search in right.
+		 * Else one of p and q is on left of root and the other one is on right. So return root.
+		 * 
          * Time Complexity: O(N), where N is the number of nodes in the BST. In the worst case we might be visiting all the nodes of the BST.
          * Space Complexity: O(1)
          */
@@ -36,6 +42,12 @@ public class LowestCommonAncestor {
 	private TreeNode<Integer> lowestCommonAncestor(TreeNode<Integer> root, TreeNode<Integer> p, TreeNode<Integer> q) {
         
 		/**
+		 * Logic:
+		 * If root is null, tree is empty and hence return null reference.
+		 * Else if values at both p and q are less than value at root, that means p and q are be on left of root. So search in left.
+		 * Else if values at both p and q are greater than value at root, that means p and q are be on right of root. search in right.
+		 * Else one of p and q is on left of root and the other one is on right. So return root.
+		 * 
          * Time Complexity: O(N), where N is the number of nodes in the BST. In the worst case we might be visiting all the nodes of the BST.
          * Space Complexity: O(N). Because the maximum amount of space utilized by the recursion stack would be N since the height of a skewed BST could be N.
          */
