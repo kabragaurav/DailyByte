@@ -28,7 +28,7 @@ public class ModeInTree {
         mp.put(root.val, mp.getOrDefault(root.val, 0) + 1);
         if(mp.get(root.val) > modeMagnitude) {
             modeMagnitude = mp.get(root.val);
-            count = 0;
+            count = 1;
         }
         else if(mp.get(root.val) == modeMagnitude) {
             count++;
@@ -43,9 +43,6 @@ public class ModeInTree {
          * Space Complexity: O(N) (maximum amount of space utilized by the recursion stack in traversal would be N since the height of a skewed BST could be N).
          */
 		
-		if(root == null)
-			return new int[] {};
-		
 		// initialize here, so that values reset for each call
 		modeMagnitude= Integer.MIN_VALUE;
 		count = 0;
@@ -57,7 +54,7 @@ public class ModeInTree {
         inOrder(root, mp);
         
         // array that stores node values that occur maximum in tree
-        int[] arr = new int[count+1];
+        int[] arr = new int[count];
         int i = 0;
         
         for(Map.Entry<Integer, Integer> entry : mp.entrySet()) {
