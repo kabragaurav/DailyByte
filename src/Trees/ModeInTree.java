@@ -43,6 +43,9 @@ public class ModeInTree {
          * Space Complexity: O(N) (maximum amount of space utilized by the recursion stack in traversal would be N since the height of a skewed BST could be N).
          */
 		
+		if(root == null)
+			return new int[] {};
+		
 		// initialize here, so that values reset for each call
 		modeMagnitude= Integer.MIN_VALUE;
 		count = 0;
