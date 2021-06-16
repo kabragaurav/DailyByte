@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Trees.TreeUtils.TreeNode;
+import Trees.TreeUtils.TreeUtil;
 
 /**
  * @author gaurav kabra
@@ -37,36 +38,12 @@ public class BSTToArray {
 		}
 	}
 	
-	// helper method to main
-	private static TreeNode<Integer> getTreeNode(Integer val) {
-	    TreeNode<Integer> treeNode = new TreeNode<Integer>(val);
-		return treeNode;
-	}
-	
 	// driver - main method
 	public static void main(String[] args) {
 		// create empty list to hold sorted numbers from tree traversal
 		List<Integer> ls = new ArrayList<>();
 		
-		// make Tree
-	    TreeNode<Integer> root = getTreeNode(6);
-		TreeNode<Integer> two = getTreeNode(2);
-		TreeNode<Integer> eight = getTreeNode(8);
-		TreeNode<Integer> zero = getTreeNode(0);
-		TreeNode<Integer> four = getTreeNode(4);
-		TreeNode<Integer> seven = getTreeNode(7);
-		TreeNode<Integer> nine = getTreeNode(9);
-		TreeNode<Integer> three = getTreeNode(3);
-		TreeNode<Integer> five = getTreeNode(5);
-				
-		root.left = two;	
-		root.right = eight;
-		two.left = zero;
-		two.right = four;
-		eight.left = seven;
-		eight.right = nine;
-		four.left = three;
-		four.right = five;	
+		TreeNode<Integer> root = TreeUtil.getDummyBinarySearchTree();
 		
 		BSTToArray bta = new BSTToArray();
 		bta.inOrderTraversal(ls, root);

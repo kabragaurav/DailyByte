@@ -6,6 +6,7 @@
 package Trees;
 
 import Trees.TreeUtils.TreeNode;
+import Trees.TreeUtils.TreeUtil;
 
 /**
  * @author gaurav kabra
@@ -32,34 +33,9 @@ public class FindValue {
 					            : getValueReference(root.right, val);
 	}
 	
-	// helper method to main
-	private static TreeNode<Integer> getTreeNode(Integer val) {
-	    TreeNode<Integer> treeNode = new TreeNode<Integer>(val);
-		return treeNode;
-	}
-	
 	// driver - main method
 	public static void main(String[] args) {
-		// make tree
-		TreeNode<Integer> root = getTreeNode(6);
-		TreeNode<Integer> two = getTreeNode(2);
-		TreeNode<Integer> eight = getTreeNode(8);
-		TreeNode<Integer> zero = getTreeNode(0);
-		TreeNode<Integer> four = getTreeNode(4);
-		TreeNode<Integer> seven = getTreeNode(7);
-		TreeNode<Integer> nine = getTreeNode(9);
-		TreeNode<Integer> three = getTreeNode(3);
-		TreeNode<Integer> five = getTreeNode(5);
-		
-		root.left = two;	
-		root.right = eight;
-		two.left = zero;
-		two.right = four;
-		eight.left = seven;
-		eight.right = nine;
-		four.left = three;
-		four.right = five;
-		
+		TreeNode<Integer> root = TreeUtil.getDummyBinarySearchTree();
 		// TESTCASES
 		FindValue fv = new FindValue();
 		System.out.println(fv.getValueReference(root, 5).val);

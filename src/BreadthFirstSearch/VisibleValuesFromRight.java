@@ -1,24 +1,31 @@
 /**
- * Given a binary tree, return the largest value in each of its levels.
+ * Given a binary tree return all the values you’d be able to see 
+ * if you were standing on the right side of it with values ordered from top to bottom.
  */
 package BreadthFirstSearch;
-/**
- * @author gaurav kabra
- * @since June 16, 2021
- */
-import java.util.List;
 
+import java.util.List;
 import BreadthFirstSearch.Utils.LevelOrderTraversalUtil;
 import Trees.TreeUtils.TreeNode;
 import Trees.TreeUtils.TreeUtil;
 
 /**
+ * @author gaurav kabra
+ * @since June 16, 2021
+ */
+
+/**
  * The logic is same as LevelOrderTraversal.java
  * In fact, it is just a slight variation of LevelOrderTraversal.java program
  */
-public class MaxAtEachLevel {
+public class VisibleValuesFromRight {
 	
 	/**
+	 * Logic:
+	 * Perform the level order traversal.
+	 * If you view a tree from right side, you will see last element of each level.
+	 * So return last element of each level from level order traversal.
+	 * 
 	 * Time Complexity : O(N) since we traverse tree once
 	 * Space Complexity : O(N) since we need storage depending on number of nodes in tree(i.e. N).
 	 */
@@ -26,30 +33,18 @@ public class MaxAtEachLevel {
 		return LevelOrderTraversalUtil.levelOrderTraversal(root);
 	}
 	
-	// finds and prints the max at each level of tree
-	private void printMaxAtEachLevel(List<List<TreeNode<Integer>>> ls) {
+	private void getRightView(List<List<TreeNode<Integer>>> ls) {
 		for(List<TreeNode<Integer>> l : ls) {
-			int max = Integer.MIN_VALUE;
-			for(TreeNode<Integer> node : l) {
-				max = (node.val > max ? node.val 
-									  : max
-					   );
-			}
-			System.out.println(max);
+			System.out.println(l.get(l.size()-1).val);		 // last element at each level
 		}
 	}
 	
 	// driver - main method
 	public static void main(String[] args) {
-
 		TreeNode<Integer> root = TreeUtil.getDummyBinarySearchTree();
-		MaxAtEachLevel mael = new MaxAtEachLevel();
-		
-		// TESTCASES
-		List<List<TreeNode<Integer>>> ls1 = mael.levelOrderTraversal(root);
-		mael.printMaxAtEachLevel(ls1);
-		List<List<TreeNode<Integer>>> ls2 = mael.levelOrderTraversal(null);
-		mael.printMaxAtEachLevel(ls2);
+		VisibleValuesFromRight vvfr = new VisibleValuesFromRight();
+		List<List<TreeNode<Integer>>> ls = vvfr.levelOrderTraversal(root);
+		vvfr.getRightView(ls);
 	}
 
 }
