@@ -1,5 +1,5 @@
 /**
- * Find the number of valid parentheses expressions of length N.
+ * Find the number of valid parentheses expressions of length N, where N is even.
  */
 package Miscellaneous.CatalanNumber;
 

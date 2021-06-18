@@ -10,14 +10,14 @@ package Miscellaneous.CatalanNumber.CatalanUtil;
 public class NThCatalanNumber {
 	
 	public static int catalanNumber(int n) {
-		/**
-		 * Nth Catalan number Cn is defined as:
-		 * Cn = C0*Cn-1 + C1*Cn-2 + ...
-		 * Which boils down to (2n)! / ((n + 1)! n!)
-		 * 
-		 * Time Complexity : O(N2)
-		 * Space Complexity : O(N) for array G
-		 */
+	/**
+	 * Nth Catalan number Cn is defined as:
+	 * Cn = C0*Cn-1 + C1*Cn-2 + ...
+	 * Which boils down to (2n)! / ((n + 1)! n!)
+	 * 
+	 * Time Complexity : O(N2)
+	 * Space Complexity : O(N) for array G
+	 */
         int [] G = new int[n+1];
         G[0] = G[1] = 1;
 

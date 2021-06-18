@@ -1,6 +1,7 @@
 /**
- * Count number of Dyck paths of length 2N, which are sequences of equally-spaced north-east and south-east walks 
- * starting at the origin, ending on the X-axis, and never going below the X-axis.
+ * Count number of Dyck paths of length 2N, which are sequences of equally-spaced north-east 
+ * and south-east walks starting at the origin, ending on the X-axis, and never going below the X-axis.
+ * You must return to ground at last (means # of ups = # of downs)
  */
 package Miscellaneous.CatalanNumber;
 
