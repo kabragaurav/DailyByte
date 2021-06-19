@@ -2,7 +2,7 @@
  * Facebook
  * Given two strings s and t return whether or not s is an anagram of t.
  */
-package HashMap_2;
+package HashMap;
 
 import java.util.Arrays;
 import java.util.HashMap;

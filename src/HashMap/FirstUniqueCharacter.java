@@ -3,7 +3,7 @@
  * Given a string, return the index of its first unique character. 
  * If a unique character does not exist, return -1.
  */
-package HashMap_2;
+package HashMap;
 
 import java.util.HashMap;
 import java.util.Map;

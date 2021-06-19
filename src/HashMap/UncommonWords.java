@@ -5,7 +5,7 @@
  * You may assume that each sentence is a sequence of words (without punctuation) correctly separated
  * using space characters.
  */
-package HashMap_2;
+package HashMap;
 
 import java.util.HashMap;
 import java.util.Map;

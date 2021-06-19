@@ -3,7 +3,7 @@
  * Given two integer arrays, return their intersection.
  * Note: the intersection is the set of elements that are common to both arrays.
  */
-package HashMap_2;
+package HashMap;
 
 import java.util.HashSet;
 import java.util.Set;

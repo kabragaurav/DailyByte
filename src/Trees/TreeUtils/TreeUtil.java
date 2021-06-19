@@ -20,7 +20,17 @@ public class TreeUtil {
 	 */
 	public static TreeNode getDummyBinarySearchTree() {
 		
-		// make Tree
+		/**
+		 * Make this BST:
+		 * 					6
+		 * 				 /     \
+		 * 				2       8
+		 * 			  /   \    /  \
+		 * 			0     4   7    9
+		 *              /   \
+		 *              3    5
+		 */
+	
 	    TreeNode<Integer> root = getTreeNode(6);
 		TreeNode<Integer> two = getTreeNode(2);
 		TreeNode<Integer> eight = getTreeNode(8);

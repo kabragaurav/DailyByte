@@ -3,7 +3,7 @@
  * Given an array of integers, return whether or not two numbers sum to a given target, k.
  * Note: you may not sum a number with itself.
  */
-package HashMap_2;
+package HashMap;
 
 import java.util.HashSet;
 import java.util.Set;
