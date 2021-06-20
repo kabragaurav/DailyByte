@@ -14,25 +14,26 @@ import Trees.TreeUtils.TreeUtil;
 
 public class DiameterOfTree {
 	
-	private int height(TreeNode root) {
-		if(root == null)
-			return 0;
-		return 1 + Math.max(height(root.left), height(root.right));
-	}
+	int maxValue = Integer.MIN_VALUE;
 	
-	private int diameterOfBinaryTree(TreeNode<Integer> root) {
-		/**
-    	 * Time Complexity: O(N) since we essentially traverse the tree
-    	 * Space Complexity: O(N) since we use implicit stack in recursive calls
-    	 */
+	private int diameterOfBinaryTreeHelper(TreeNode<Integer> root) {
         if(root == null)
         	return 0;
         
-        int leftHeight = height(root.left);
-        int rightHeight = height(root.right);
+        int leftHeight = diameterOfBinaryTreeHelper(root.left);
+        int rightHeight = diameterOfBinaryTreeHelper(root.right);
         
-        return Math.max(1+leftHeight+rightHeight,
-        				Math.max(diameterOfBinaryTree(root.left), diameterOfBinaryTree(root.right)));
+        maxValue = Math.max(maxValue, leftHeight + rightHeight + 1);
+        
+        // In the upper layer(after return statement), we cannot choose both left and right branches
+        // so we need to select the larger one, so we use max(left, right) + root.val to prune the lower branch
+        return 1 + Math.max(leftHeight, rightHeight);
+		
+	}
+	
+	private int diameterOfBinaryTree(TreeNode<Integer> root) {
+		diameterOfBinaryTreeHelper(root);
+		return maxValue;
     }
 	
 	// driver - main method

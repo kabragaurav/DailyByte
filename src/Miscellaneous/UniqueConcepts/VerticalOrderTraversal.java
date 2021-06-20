@@ -2,7 +2,7 @@
  * Given the root of a binary tree, print the vertical order traversal of the binary tree.
  * For each node at position (row, col), its left and right children will be at positions (row + 1, col - 1) and (row + 1, col + 1) respectively. The root of the tree is at (0, 0).
  * The vertical order traversal of a binary tree is a list of orderings for each column index starting from the leftmost column and ending on the rightmost column.
- * There may be multiple nodes in the same row and same column. In such a case, sort these nodes by their values in reverse order.
+ * There may be multiple nodes in the same row and same column. In such a case, sort these nodes by their values in descending order.
  */
 package Miscellaneous.UniqueConcepts;
 
@@ -41,6 +41,7 @@ public class VerticalOrderTraversal {
         if(mp.containsKey(hD)) {
             List<Integer> ls = mp.get(hD);
             ls.add(root.val);
+            mp.put(hD, ls);
         }
         else {
             mp.put(hD, new ArrayList<Integer>() {{

@@ -16,7 +16,7 @@ import Trees.TreeUtils.TreeNode;
 import Trees.TreeUtils.TreeUtil;
 
 public class MaximumPathSum {
-    int maxValue;
+    int maxValue = Integer.MIN_VALUE;
     
     private int maxPathSumHelper(TreeNode<Integer> root) {
     	/**
@@ -32,13 +32,12 @@ public class MaximumPathSum {
         // The second maxValue contains the bigger between the left sub-tree and right sub-tree
         maxValue = Math.max(maxValue, left + right + root.val);
         
-        // In the upper layer(after return statement), we cannot choose both left and right brunches
+        // In the upper layer(after return statement), we cannot choose both left and right branches
         // so we need to select the larger one, so we use max(left, right) + root.val to prune the lower branch
         return Math.max(left, right) + root.val;
     }
     
     private int maxPathSum(TreeNode<Integer> root) {
-        maxValue = Integer.MIN_VALUE;
         maxPathSumHelper(root);
         return maxValue;
     }
