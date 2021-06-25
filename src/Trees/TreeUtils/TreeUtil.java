@@ -52,5 +52,50 @@ public class TreeUtil {
 		
 		return root;
 	}
+	
+	
+		// helper method for getDummyBinarySearchTreeLong()
+		private static TreeNode<Long> getTreeNode(Long val) {
+		    TreeNode<Long> treeNode = new TreeNode<Long>(val);
+			return treeNode;
+		}
+		
+		/**
+		 * @return TreeNode root of a sample binary search tree (BST) having values of Long type
+		 */
+		public static TreeNode getDummyBinarySearchTreeLong() {
+			
+			/**
+			 * Make this BST:
+			 * 					6
+			 * 				 /     \
+			 * 				2       8
+			 * 			  /   \    /  \
+			 * 			0     4   7    9
+			 *              /   \
+			 *              3    5
+			 */
+		
+		    TreeNode<Long> root = getTreeNode(6l);  
+			TreeNode<Long> two = getTreeNode(2l);
+			TreeNode<Long> eight = getTreeNode(8l);
+			TreeNode<Long> zero = getTreeNode(0l);
+			TreeNode<Long> four = getTreeNode(4l);
+			TreeNode<Long> seven = getTreeNode(7l);
+			TreeNode<Long> nine = getTreeNode(9l);
+			TreeNode<Long> three = getTreeNode(3l);
+			TreeNode<Long> five = getTreeNode(5l);
+					
+			root.left = two;	
+			root.right = eight;
+			two.left = zero;
+			two.right = four;
+			eight.left = seven;
+			eight.right = nine;
+			four.left = three;
+			four.right = five;
+			
+			return root;
+		}
 
 }
