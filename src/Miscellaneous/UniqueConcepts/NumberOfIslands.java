@@ -10,6 +10,11 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
+/**
+ * @author gaurav kabra
+ * @since June 25, 2021
+ */
+
 public class NumberOfIslands {
 	
 
@@ -23,6 +28,10 @@ public class NumberOfIslands {
 	}
 	
 	private int getNumberOfIslands(int[][] grid) {
+		/**
+		 * Logic:
+		 * The solution is almost same as RottenOranges.java
+		 */
 		
 		List<int[]> ls = new ArrayList<>();
 		int islands = 0;
@@ -35,6 +44,11 @@ public class NumberOfIslands {
 			}
 		}
 		
+		/**
+		 * We traverse one element at a time.
+		 * If it is one, we offer its coordinates to deque.
+		 * While deque is not empty, we keep turning poped element's neighbors to -1 (indicating it has been included, don't include it again) and also updating grid on the fly
+		 */
 		Deque<int[]> deque = new ArrayDeque<>();
 		for(int i=0; i<grid.length; i++) {
 			for(int j=0; j<grid[0].length; j++) {
@@ -58,7 +72,8 @@ public class NumberOfIslands {
 		
 		return islands;
 	}
-
+	
+	// driver - main method
 	public static void main(String[] args) {
 		NumberOfIslands noi = new NumberOfIslands();
 		int[][] grid1 = new int[][] {
@@ -74,6 +89,7 @@ public class NumberOfIslands {
 			{0,0,0,1,1}
 		};
 		
+		// TESTCASES
 		System.out.println(noi.getNumberOfIslands(grid1));
 		System.out.println(noi.getNumberOfIslands(grid2));
 
