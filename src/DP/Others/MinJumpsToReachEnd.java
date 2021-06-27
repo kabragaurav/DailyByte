@@ -1,8 +1,9 @@
 /**
- * Given an array of non-negative integers arr, you are initially positioned at index 0.
+ * Arcesium
+ * Given an array of non-negative integers arr, a frog is initially positioned at index 0.
  * Each element in the array represents maximum jump length from that position to right.
- * Your goal is to find the the minimum number of jumps to reach last index of array.
- * Assume that you can always reach the last index.
+ * Your goal is to find the the minimum number of jumps for frog to reach last index of array.
+ * Assume that the frog can always reach the last index.
  */
 package DP.Others;
 

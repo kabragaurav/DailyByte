@@ -13,7 +13,6 @@ package DP.Others;
 
 public class CoinChange {
 	
-	// 
 	private static final int SOME_BIG_INT = 100000000;
     
     private int coinHelper(int[] coins, int amount, int current, int[][] cache) {
