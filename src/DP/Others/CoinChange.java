@@ -18,7 +18,7 @@ public class CoinChange {
     private int coinHelper(int[] coins, int amount, int current, int[][] cache) {
     	/**
     	 * If amount < 0 or index of current position exceeds bounds of array, we return very large value indicating that we will return -1 saying we cannot make that amount.
-    	 * If amount becomes 0, that means there is 0 way to make that amount.
+    	 * If amount becomes 0, that means there is 0 number of coins are required to make that amount.
     	 * Else once we choose coin at current value and see number of coins to make amount.
     	 * And once we donot choose the current coin and see number of coins to make amount.
     	 * We return min of these two.

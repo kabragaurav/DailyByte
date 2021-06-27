@@ -3,7 +3,7 @@
  * Given an array of non-negative integers arr, a frog is initially positioned at index 0.
  * Each element in the array represents maximum jump length from that position to right.
  * Your goal is to find the the minimum number of jumps for frog to reach last index of array.
- * Assume that the frog can always reach the last index.
+ * If the frog cannot reach end, return -1.
  */
 package DP.Others;
 
@@ -32,20 +32,23 @@ public class MinJumpsToReachEnd {
         for(int i=1; i<N; i++) {
             min_jumps[i] = Integer.MAX_VALUE;
             for(int j=0; j<i; j++) {
-                if(arr[j] >= (i-j) && min_jumps[j] != Integer.MAX_VALUE) {
+                if(arr[j] >= (i-j)) {
                     min_jumps[i] = Math.min(min_jumps[i],
                                            min_jumps[j]+1);
                     break;
                 }
             }
         }
-        return min_jumps[N-1];
+        return (min_jumps[N-1] == Integer.MAX_VALUE 
+        		|| min_jumps[N-1] < 0) ? -1
+        				               : min_jumps[N-1];
     }
 	
 	// driver - main method
 	public static void main(String[] args) {
 		// TESTCASE
 		System.out.println(new MinJumpsToReachEnd().jump(new int[] {2,3,1,1,4}));
+		System.out.println(new MinJumpsToReachEnd().jump(new int[] {0, 2, 3}));
 	}
 
 }
