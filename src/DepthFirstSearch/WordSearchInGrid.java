@@ -1,6 +1,16 @@
+/**
+ * Given an MxN grid of characters and a string word, 
+ * return true if word exists in the grid.
+ * The word can be constructed from letters of sequentially adjacent cells, 
+ * where adjacent cells are horizontally or vertically neighboring. 
+ * The same letter cell may not be used more than once.
+ */
 package DepthFirstSearch;
 
-import java.util.Arrays;
+/**
+ * @author gaurav kabra
+ * @since July 02, 2021
+ */
 
 public class WordSearchInGrid {
 	
@@ -12,6 +22,11 @@ public class WordSearchInGrid {
 	    };
 	    
 	    private boolean isWordPossible(char[][] grid, int x, int y, String word, String currentWord) {
+	    	/**
+	    	 * if we found whole word, return true.
+	    	 * Else if current word we have constructed is not in word we want to have, return false.
+	    	 * Else add current character to current word and make sure we don't come again to it by setting it to '-' temporarily
+	    	 */
 	        if(currentWord.equals(word))
 	            return true;
 	        if(!word.contains(currentWord) || (x >= grid.length || y >= grid[0].length || x < 0 || y < 0))
@@ -29,32 +44,54 @@ public class WordSearchInGrid {
 	        return false;
 	    }
 	    
-	    public boolean exist(char[][] grid, String word) {
+	    private boolean exist(char[][] grid, String word) {
+	    	/**
+	    	 * Logic:
+	    	 * Go to each cell and start from there to find if word can be constructed
+	    	 * 
+	    	 * Time Complexity : O(MN4^L) where L is length of word
+	    	 * Space Complexity : O(L) for each cell start
+	    	 */
 	        int rows = grid.length;
 	        int cols = grid[0].length;
 	        
-	        char[][] temp = new char[grid.length][];
-	        
-	        for(int i=0; i<grid.length; i++) {
-	            temp[i] = Arrays.copyOf(grid[i], grid[i].length);
-	        }
 	        
 	        for(int i=0; i<rows; i++) {
 	            for(int j=0; j<cols; j++) {
 	                if(isWordPossible(grid, i, j, word, ""))
 	                    return true;
-	                else {
-	                    for(int k=0; k<temp.length; k++) {
-	                        grid[k] = Arrays.copyOf(temp[k], temp[k].length);
-	                    }
-	                }
 	            }
 	        }
 	        return false;
 	    }
-
+	    
+	// driver - main method
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		// TESTCASES
+		char[][][] gridCollection = {
+				{
+					{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}
+				},
+				{
+					{'a', 'b'}, {'c', 'd'}
+				},
+				{
+					{'A','A','A','A','A','A'},{'A','A','A','A','A','A'},{'A','A','A','A','A','A'},{'A','A','A','A','A','A'},{'A','A','A','A','A','A'},{'A','A','A','A','A','A'}
+				}
+		};
+		
+		String[] wordCollection = {
+				"ABCB",
+				"acdb",
+				"AAAAAAAAAAAAAAB"
+		};
+		
+		WordSearchInGrid wsig = new WordSearchInGrid();
+		
+		for(int i=0; i<3; i++) {
+			System.out.println(wsig.exist(gridCollection[i], wordCollection[i]));
+		}
 
 	}
 
