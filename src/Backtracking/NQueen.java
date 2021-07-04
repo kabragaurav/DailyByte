@@ -43,7 +43,7 @@ public class NQueen {
     	/**
     	 * Logic:
     	 * Place queens one by one in different columns, starting from the leftmost column. 
-    	 * When we place a queen in a column, we check for clashes with already placed queens. 
+    	 * When we place a queen in a column, we check for clashes with already placed queens using isSafe() method
     	 * In the current column, if we find a row for which there is no clash, we mark this row and column as part of the solution.
     	 * 
     	 * Time Complexity : O(N^N) or at least O(N!)
@@ -91,5 +91,6 @@ public class NQueen {
 	public static void main(String[] args) {
 		// TESTCASE
 		System.out.println(new NQueen().solveNQueens(4));
+		// Note that half of the solutions are mirror-image of other halfs
 	}
 }

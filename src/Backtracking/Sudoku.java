@@ -17,15 +17,11 @@ public class Sudoku {
     private boolean isSafe(char[][] grid, int row, int col, int N, char x) {
     	// check in all col for given row
         for(int j=0; j<N; j++) {
-            if(grid[row][j] == '.')
-                continue;
             if(x == grid[row][j])
                 return false;
         }
         // check for all rows in given col
         for(int i=0; i<N; i++) {
-            if(grid[i][col] == '.')
-                continue;
             if(x == grid[i][col])
                 return false;
         }
@@ -36,8 +32,6 @@ public class Sudoku {
         int boxStartCol = col - col % sqrt;
         for(int i=boxStartRow; i<boxStartRow + sqrt; i++) {
             for(int j=boxStartCol; j<boxStartCol + sqrt; j++) {
-                if(grid[i][j] == '.')
-                    continue;
                 if(x == grid[i][j])
                     return false;
             }
@@ -65,8 +59,8 @@ public class Sudoku {
                     break;
                 }
             }
-            if(isThisColFilled)
-                continue;
+            if(!isThisColFilled)
+                break;
         }
         if(isThisColFilled)
             return true;

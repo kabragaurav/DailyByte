@@ -40,7 +40,7 @@ public class GoldRush {
 	    	 * We take max of those amounts and store in max
 	    	 * Note that we don't keep coming to same cell, so we set it temporarily to 0
 	    	 * 
-	    	 * Time Complexity: O(4 * 3^(max(M-1), max(N-1)) ~ O(3^N), where N is one dimension of grid. Because at starting from any cell, we can move in 4 directions. For remaining, we have 3 directions only.
+	    	 * Time Complexity: O(4 * 3^(max(N-1), max(N-1)) ~ O(3^N), where N is one dimension of grid. Because at starting from any cell, we can move in 4 directions. For remaining, we have 3 directions only.
 	    	 * Space Complexity: O(M * N) for implicit stack where grid is of dimensions MxN, worst case when no 0 is there
 	    	 */
 	        if(!isSafe(grid, x, y)) {
@@ -80,6 +80,7 @@ public class GoldRush {
 			System.out.println(new GoldRush().getMaximumGold(new int[][] {
 				{0,6,0},{5,8,7},{0,9,0}
 			}));
+			// worst case - No 0
 			System.out.println(new GoldRush().getMaximumGold(new int[][] {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}, {11, 12, 13, 14, 15}, {16, 17, 18, 19, 20}, {21, 22, 23, 24, 25}}));
 			
 		}

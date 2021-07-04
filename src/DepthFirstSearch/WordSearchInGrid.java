@@ -32,15 +32,16 @@ public class WordSearchInGrid {
 	        if(!word.contains(currentWord) || (x >= grid.length || y >= grid[0].length || x < 0 || y < 0))
 	            return false;
 	        boolean ans = false;
-	        String newCurrentWord = currentWord+grid[x][y];
+	        String newCurrentWord = currentWord + grid[x][y];
 	        char t = grid[x][y];
+	        // set to '-' so we don't visit it again
 	        grid[x][y] = '-';
 	        for(int[] dir : dirs) {
 	            ans = ans || isWordPossible(grid, x+dir[0], y+dir[1], word, newCurrentWord);
 	            if(ans)
 	                return true;
 	        }
-	        grid[x][y] = t;
+	        grid[x][y] = t;		// backtrack
 	        return false;
 	    }
 	    

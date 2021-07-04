@@ -73,7 +73,6 @@ public class LRUCache {
         }
         if(map.size() == capacity) {
             map.remove(map.keySet().iterator().next());
-
         }
         map.put(key, value);
     }

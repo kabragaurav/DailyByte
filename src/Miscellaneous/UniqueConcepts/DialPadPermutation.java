@@ -1,7 +1,7 @@
 /**
  * Google
  * Given a string containing digits from 2-9 inclusive, each number maps to set of characters just like on a dial pad.
- * Return all possible letter combinations that the number could represent if pressed in that order. 
+ * Return all possible letter combinations that the number could represent if pressed in that order(any number can be pressed any non-zero number of times). 
  * Return the answer in any order.
  */
 package Miscellaneous.UniqueConcepts;

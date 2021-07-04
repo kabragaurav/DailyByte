@@ -29,6 +29,7 @@ public class StringPermutations {
 		 * Time Complexity : O(N * 2^N) where N is length of string
 		 * Space Complexity : O(N) for one character array
 		 */
+		s = s.toLowerCase();
         Set<String> st = new HashSet<>();
         
         int pow2ToN = 1 << (s.length()+1);
