@@ -2,7 +2,7 @@
  * DE Shaw
  * Design a data structure that supports the following operations in Θ(1) time.
  * insert(x): Inserts an integer x to the data structure if not already present.
- * remove(x): Removes integer x from the data structure if present. 
+ * remove(x): Removes integer x from the data structure if present.
  * search(x): Searches an integer x in the data structure and return index if present, else -1.
  * getRandom(): Returns a random element from current set of elements (size > 0)
  * 
@@ -37,11 +37,8 @@ class DataStructure {
 	}
 	
 	public Integer remove(int x) {
-		// before removing x, update indices of elements inserted after x
-		int indexOfElementToBeRemoved = arr.indexOf(new Integer(x));
-		for(int i=indexOfElementToBeRemoved; i<arr.size(); i++) {
-			mp.put(arr.get(i), mp.get(arr.get(i))-1);
-		}
+		if(mp.get(x) == null)
+			return -1;
 		arr.remove(new Integer(x));		// if we directly pass x, then it is treated as index, which may lead to ArrayIndexOutOfBounds exception
 		return mp.remove(x);
 	}

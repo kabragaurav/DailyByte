@@ -53,6 +53,8 @@ public class CombinationSum {
 		System.out.println(cs.combinationSum(new int[] {1}, 1));
 		ls.clear();
 		System.out.println(cs.combinationSum(new int[] {1}, 2));
+		ls.clear();
+		System.out.println(cs.combinationSum(new int[] {1,2,3}, 5));
 	}
 
 }

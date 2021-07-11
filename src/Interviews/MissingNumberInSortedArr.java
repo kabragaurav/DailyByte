@@ -52,6 +52,7 @@ public class MissingNumberInSortedArr {
 		// TESTCASE
 		System.out.println(mnisa.binarySearch(new int[] {1, 2, 3, 4, 6, 7, 8}, 0, 6));
 		System.out.println(mnisa.binarySearch(new int[] {1, 2, 3, 4, 5, 6, 8, 9}, 0, 7));
+		System.out.println(mnisa.binarySearch(new int[] {1}, 0, 0));
 	}
 
 }
