@@ -13,9 +13,18 @@ package DP.Others;
 
 import java.util.Arrays;
 
+/**
+ * @author gaurav kabra
+ * @since July 10, 2021
+ */
+
 public class MaximumScore {
-	
 	private int getMaxScore(int score, int[] tokens, int start, int end, int energy, int[][] cache) {
+		/**
+		 * Logic:
+		 * We always buy tokens where start points and sell tokens where end points
+		 * We take maximum tokens as answer that can be achieved in either ways
+		 */
         if(start >= tokens.length || end < 0) 
             return score;
         if(cache[start][end] != 0)
@@ -37,18 +46,24 @@ public class MaximumScore {
     	 * Logic:
     	 * Always trade less power for a point
     	 * Always trade a point for higher power
+    	 * So we sort the tokens and keep two pointers pointing to edges of tokens array
+    	 * 
+    	 * Space Complexity: O(N*N) for cache array
     	 */
         Arrays.sort(tokens);
         int score = 0;
         int[][] cache = new int[tokens.length][tokens.length];
         int ans = getMaxScore(score, tokens, 0, tokens.length-1, energy, cache);
-        return  ans >=0 ? ans : 0;
+        return ans;
     }
-
+    
+    // driver - main method
 	public static void main(String[] args) {
 		MaximumScore ms = new MaximumScore();
+		// TESTCASE
 		System.out.println(ms.bagOfTokensScore(new int[] {602,3001,7452,524,6211,255,4715,8885,101,5268,664,8671,6862,7419,6690,64,411,6208,9996,8731}, 6996));
 		System.out.println(ms.bagOfTokensScore(new int[] {81,91,31}, 73));
+		System.out.println(ms.bagOfTokensScore(new int[] {100}, 50));
 	}
 
 }

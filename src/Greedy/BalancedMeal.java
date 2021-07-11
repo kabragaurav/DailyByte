@@ -8,9 +8,23 @@
  */
 package Greedy;
 
+/**
+ * @author gaurav kabra
+ * @since July 10, 2021
+ */ 
+
 public class BalancedMeal {
 	
 	private int balancedMealsCount(char[] meals) {
+		/**
+		 * Logic:
+		 * We move a pointer from left to right
+		 * At every position, we check if #('F') = #('D'). 
+		 * If so we increment #(balanced)
+		 * 
+		 * Time Complexity : O(N)
+		 * Space Complexity : O(1)
+		 */
 		if(meals.length == 0)
 			return 0;
 		int fCount = 0;
@@ -29,9 +43,11 @@ public class BalancedMeal {
 		}
 		return balanced;
 	}
-
+	
+	// driver - main method
 	public static void main(String[] args) {
 		BalancedMeal bm = new BalancedMeal();
+		// TESTCASES
 		System.out.println(bm.balancedMealsCount("FDFDFD".toCharArray()));
 		System.out.println(bm.balancedMealsCount("FDFFDFDD".toCharArray()));
 	}
